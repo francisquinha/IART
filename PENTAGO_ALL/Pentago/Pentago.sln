@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{F7961583-AD9C-FB44-4753-47E4C7CA0343}") = "Pentago", "Assembly-CSharp-firstpass.csproj", "{97CA6EBE-F77C-35C3-6BCA-B7F04D029E6B}"
+EndProject
+Project("{F7961583-AD9C-FB44-4753-47E4C7CA0343}") = "Pentago", "Assembly-CSharp.csproj", "{39333542-F945-3FB8-E6ED-94BDDAD329C4}"
+EndProject
+Project("{F7961583-AD9C-FB44-4753-47E4C7CA0343}") = "Pentago", "Assembly-CSharp-Editor.csproj", "{B3877CE3-B184-16D6-CC28-7E8DF737544E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97CA6EBE-F77C-35C3-6BCA-B7F04D029E6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97CA6EBE-F77C-35C3-6BCA-B7F04D029E6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97CA6EBE-F77C-35C3-6BCA-B7F04D029E6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97CA6EBE-F77C-35C3-6BCA-B7F04D029E6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39333542-F945-3FB8-E6ED-94BDDAD329C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39333542-F945-3FB8-E6ED-94BDDAD329C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39333542-F945-3FB8-E6ED-94BDDAD329C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39333542-F945-3FB8-E6ED-94BDDAD329C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3877CE3-B184-16D6-CC28-7E8DF737544E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3877CE3-B184-16D6-CC28-7E8DF737544E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3877CE3-B184-16D6-CC28-7E8DF737544E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3877CE3-B184-16D6-CC28-7E8DF737544E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

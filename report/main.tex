@@ -1,0 +1,119 @@
+\input{CONFIGS.tex}
+
+\begin{document}
+
+\setlength{\voffset}{0.6in}
+\addtolength{\topmargin}{-.3in}
+\setlength{\textwidth}{17cm}
+\setlength{\textheight}{23cm}
+\setlength{\parskip}{0.5em}
+
+\title{
+\Huge\textbf{Pentago}\linebreak\linebreak
+\Large\textbf{Relatório Final}\linebreak\linebreak\linebreak
+\includegraphics[height=6cm, width=7cm]{feup.pdf}\linebreak\linebreak
+\Large{Mestrado Integrado em Engenharia Informática e Computação} \linebreak \linebreak
+\Large{Inteligência Artificial}\linebreak\linebreak
+}
+
+\author{\textbf{Grupo}\\ 
+Ângela Filipa Pereira Cardoso - 200204375 - angela.cardoso@fe.up.pt \\
+Bruno Miguel Dias Madeira - 201306619 - up201306619@fe.up.pt \\
+Franscisco José Lopes Veiga- 201201604 - ei12170@fe.up.pt \\\linebreak\linebreak \\ \\ 
+ \\ Faculdade de Engenharia da Universidade do Porto \\ Rua Roberto Frias, s\/n, 4200-465 Porto, Portugal  \linebreak\linebreak\linebreak\linebreak
+\linebreak\linebreak\vspace{1cm}}
+%\date
+\maketitle
+\thispagestyle{empty}
+ 
+%************************************************************************************************
+%************************************************************************************************
+
+\newpage
+
+\tableofcontents
+
+%************************************************************************************************
+%************************************************************************************************
+
+%*************************************************************************************************
+%************************************************************************************************
+
+\newpage
+
+%---------------------------------------------------------------------%
+%---------------------------------------------------------------------%
+\section{Objetivo}
+ 
+\subsection{O Jogo Pentago}
+
+O Pentago é um jogo de estratégia para dois jogadores, jogado num tabuleiro $6 \times 6$ dividido em 4 quadrantes $3 \times 3$, que podem ser rodados. Além do tabuleiro, o jogo é composto por 18 peças brancas, que serão usadas por um dos jogadores, e 18 peças pretas, que serão usadas pelo outro.
+
+\begin{table}[H]
+\centering
+\includegraphics[height=4cm]{images/pentago-board.jpg}
+\end{table}
+
+Alternadamente, os jogadores colocam uma peça da sua cor numa casa vazia, e depois rodam um dos quadrantes 90 graus num sentido à escolha. Um jogador ganha o jogo se conseguir colocar 5 peças em linha contínua na horizontal, diagonal ou vertical, antes ou depois da rotação. Há ainda duas situações em que o jogo pode terminar em empate: se após uma rotação ambos os jogadores fizerem 5 em linha simultaneamente; ou se todas as 36 peças forem colocadas no tabuleiro e a última rotação for feita, sem que nenhum jogador obtenha 5 em linha.
+
+Por se tratar de um jogo com regras muito simples, rapidamente se aprende a jogar. No entanto, o facto de se poderem rodar os quadrantes, faz com que por vezes seja difícil ver o objetivo do adversário, e até jogadores mais experientes podem ser derrotados por distrações. Neste sentido, é um jogo interessante, porque não é fácil de dominar.
+
+\subsection{Uma Implementação do Pentago com Inteligência Artificial}
+
+O nosso objetivo neste trabalho foi realizar uma aplicação para jogar Pentago no computador, com especial enfoque na criação de adversários com inteligência artificial. A aplicação permite realizar jogos em três modos distintos: humano vs humano, humano vs computador e computador vs computador. Este último modo, apesar de não ser muito comum em aplicações do mesmo tipo, é bastante útil, porque permite determinar qual a melhor entre duas implementações diferentes do jogador computador.
+
+Dado que o ganho de um jogador corresponde exatamente à perda do outro, o Pentago é um jogo de soma zero. Neste tipo de jogos, o algoritmo minmax e as suas variantes são particularmente adequados, dado que procuram minimizar as perdas e maximizar os ganhos. Para implementar estes algoritmos, é necessário criar heurísticas que dado um tabuleiro avaliem o seu valor do ponto de vista de um dos jogadores. Neste relatório descrevemos as nossas implementações dos algoritmos minmax e as heurísticas que criamos para os jogadores computador. 
+
+%---------------------------------------------------------------------%
+%---------------------------------------------------------------------%
+\newpage
+\section{Especificação}
+
+\input{Representacao_do_Tabulerio.tex}
+
+\input{Algoritmos.tex}
+
+\input{Heuristicas.tex}
+
+\newpage
+\section{Desenvolvimento}
+
+\input{ferramentas.tex}
+
+\input{estrutura.tex}
+
+\newpage
+\input{experiencias.tex}
+
+
+%---------------------------------------------------------------------%
+%---------------------------------------------------------------------%
+\newpage
+\input{conclusao.tex}
+\input{melhorias.tex}
+
+%---------------------------------------------------------------------%
+%---------------------------------------------------------------------%
+\newpage
+\section{Recursos}
+
+\subsection{Bibliografia}
+\nocite{*}
+\printbibliography[heading=none]
+
+\input{softwarelist.tex}
+\input{workloadbalancing.tex}
+
+%=====================================================================
+%=====================================================================
+\newpage
+\begin{appendices}
+
+\input{manualdeutilizacao.tex}
+
+\newpage
+\subsection{Code}
+\input{code/IGameRules.tex}
+\end{appendices}
+
+\end{document}

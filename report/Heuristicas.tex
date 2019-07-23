@@ -1,0 +1,28 @@
+%!TEX root=main.tex
+\newpage
+\subsection{Heurísticas}
+
+\subsubsection{Heurística 1}
+\input{heuristica1.tex}
+
+\subsubsection{Heurística 1.2}
+\input{heuristica12.tex}
+
+\subsubsection{Heurística A}
+\input{heuristicA.tex}
+
+\subsubsection{Heurística A hacked}
+
+A heurística A hacked não apresenta nenhuma construção nova face às anteriores. Na verdade apenas aparece na secção de especificação para ser referida na mesma secção das outras heurísticas neste relatório. A heurística A hacked resulta de experimentação, tendo sido descoberto, combinando pesos das diferentes heurísticas implementadas, que a heurística A tinha alguma facilidade em perder nas diagonais principais. A heurística A hacked apareceu como uma contra-heurística à A fazendo uso de funcionalidades da heurística 1.2 para evitar perder nas diagonais principais. Atualmente a heurística A star apresenta melhores resultados ao usar uma profundidade de 4 (2 jogadas).
+
+\subsubsection{Heurística A star}
+
+Esta heurística é uma melhoria da heurística A. A ideia básica é a mesma, mas introduzimos mais algumas verificações e alteramos outras. Além disso, nesta heurística também é possível determinar se se estudam todos os tabuleiros rodados quando a jogada é de rotação. No entanto, como veremos na secção das experiências, o desempenho da heurística é melhor quando se estudam todas as rotações.
+
+Uma das mudanças essenciais nesta heurística é que há uma maior preocupação com quem é o próximo jogador a jogar. Por exemplo, imaginemos que ambos os jogadores têm 4 em linha com as duas pontas abertas. Então, quem irá ganhar é o próximo a jogar. Por outro lado, se apenas um dos jogadores estiver nessa posição, mesmo que não seja a vez dele, ele irá ganhar a seguir, a não ser que o outro ganhe antes por outra situação. Sendo assim, há que estudar em todos os tabuleiros rodados, quais as possibilidades de vitória dos dois jogadores. O próximo a jogar apenas precisa que um dos rodados lhe dê vitória. Enquanto que o outro precisa que um dos rodados lhe dê vitória e nenhum dê ao seu adversário.
+
+Outra mudança significativa tem a ver com possibilidades de vitória, ainda que não seja certa. Isto é, com situações em que um dos jogadores ganha, a não ser que o outro o impeça. Nesses casos o tabuleiro é classificado com os valores 50 ou -50 consoante é o jogador computador que tem a possibilidade de ganhar ou o seu adversário. Mais uma vez, isto é estudado tendo em conta todos os rodados e quem é o próximo a jogar.
+
+Em vários aspetos, esta heurística efetua correções à heurística A, isto é, calcula o valor da forma que realmente se pretendia fazer em A, mas que pela complexidade da heurística não foi inicialmente conseguido. No entanto, como a performance da A por vezes é melhor que a da A star, optamos por manter as duas heurísticas no jogo.
+
+Usando profundidade 4, a profundidade máxima que se pode usar nas nossas máquinas que ainda obtém uma reposta imediata do ponto de vista do utilizador, esta é a única heurística que com os valores das forças relativas default consegue precaver-se contra uma tática ofensiva específica no Pentago. Ao controlar o centro dos quadrantes e atacar pelas diagonais as outras heurísticas perdem se não usarem profundidades mais elevadas. 

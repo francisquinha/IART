@@ -1,0 +1,1 @@
+exec_name.exe >>outputlogname.log 2>&1

@@ -1,0 +1,6 @@
+D:\ghost\Desktop\IART local\Pentago_Tests\bin\Debug\Pentago_Tests.exe.config
+D:\ghost\Desktop\IART local\Pentago_Tests\bin\Debug\Pentago_Tests.exe
+D:\ghost\Desktop\IART local\Pentago_Tests\bin\Debug\Pentago_Tests.pdb
+D:\ghost\Desktop\IART local\Pentago_Tests\obj\Debug\Pentago_Tests.csprojResolveAssemblyReference.cache
+D:\ghost\Desktop\IART local\Pentago_Tests\obj\Debug\Pentago_Tests.exe
+D:\ghost\Desktop\IART local\Pentago_Tests\obj\Debug\Pentago_Tests.pdb

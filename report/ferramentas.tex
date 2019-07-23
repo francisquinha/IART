@@ -1,0 +1,43 @@
+%!TEX root=main.tex
+
+\subsection{Ferramentas utilizadas}
+
+\subsubsection{Geral}
+
+Para partilha de documentação, código e backups de segurança foi usado o \href{https://github.com/}{Github}.
+O repositório está disponível em \href{https://github.com/bmad4ever/IART.git}{https://github.com/bmad4ever/IART.git}.
+
+Foi usado o \href{http://andrejv.github.io/wxmaxima/}{wxMáxima} para realização de cálculos diversos.
+
+Para a elaboração de documentação e do relatório foram usados o \href{https://www.draw.io/}{Draw.io} e o \href{https://www.overleaf.com}{Overleaf}.
+
+\subsubsection{Protótipo Inicial em Consola}
+
+Foi usado o \href{https://eclipse.org/mars/}{Eclipse Mars} na implementação do protótipo inicial do jogo em Java. Este protótipo apenas funcionava em consola e ainda apresentava algumas inconsistência. Terá sido exportado para C\# para que se pudesse numa fase posterior integrar o projeto com o \href{https://unity3d.com/pt}{Unity3d}. 
+
+\subsubsection{Código Core}
+
+O código relativo ao Pentago e á inteligência artificial foram desenvolvidos na linguagem de programação C\#, no \href{https://www.visualstudio.com/}{Visual Studio} IDE para Windows OS. Como um dos elementos usou MAC OS X foi usado também o \href{https://www.virtualbox.org/}{Virtual Box} para trabalhar em Windows através de Máquina Virtual. Alternativamente poderia ter sido utilizado o \href{http://www.monodevelop.com/}{Monodevlop}, também compatível com MAC OS X.
+A possibilidade de utilizar \emph{Partial Classes} em C\# ofereceu alguma flexibilidade adicional aos elementos do grupo ao permitir trabalhar nos mesmos módulos sem que ocorram grandes conflitos nas diferentes versões do código.
+
+\subsubsection{Jogo com Interface Gráfica}
+
+Para a criar o jogo Pentago com uma interface gráfica apelativa foi utilizado o \href{https://unity3d.com/pt}{Unity3d}. Todo o código, excluindo \emph{enhancements} visuais foi criado de raiz, sendo integrado com os módulos do projeto em consola desenvolvido no Visual Studio. 
+Foi também usado o \href{https://www.blender.org/}{Blender}. na criação dos modelos 3d para interface gráfico do jogo.
+
+\subsubsection{Testes de Performance temporal e de desempenho das Heurísticas}
+
+Os dados que apresentamos neste relatório demoraram um tempo considerável a ser recolhidos, desde um dia no caso dos testes para avaliar o desempenho das heurísticas, a aproximadamente 3 no caso dos testes de performance temporal. Assim, para a realização destes, foram usados dois desktops controlados remotamente. Para a maioria dos testes foi utilizado um desktop com os seguintes características:
+\begin{itemize}
+\item Windows 10 SO, 64 bits
+\item Processador Pentium(R) Dual-Core CPU E5500 @ 2.8GHz 2.8GHz 
+\item Ram instalada 4GB(3.65GB utilizável)
+\end{itemize}
+Apenas nos testes de performance temporal com 100 tabuleiros foi usado um desktop com as seguintes características: 
+\begin{itemize}
+\item Windows 8 SO, 64 bits
+\item Processador Pentium(R) Dual-Core CPU E5700 @ 3GHz 3GHz 
+\item Ram instalada 2GB
+\end{itemize}
+
+

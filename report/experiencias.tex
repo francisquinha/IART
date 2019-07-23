@@ -1,0 +1,87 @@
+%!TEX root=main.tex
+
+\section{Experiências}
+
+Foram realizados 2 tipos de experiências distintas. As primeiras experiências foram desenhadas para testar a qualidade das heurísticas implementadas. Isto é, para determinar se os jogadores computador que usam estas heurísticas conseguem atingir bons desempenhos a jogar Pentago. Nomeadamente, tendo duas heurísticas diferentes a jogar Pentago, interessa-nos saber qual ganha. O segundo grupo de experiências pretende determinar qual a eficiência dos algoritmos implementados. Em particular, queremos comparar estes algoritmos entre si.
+
+\subsection{Qualidade das Heurísticas}
+
+Para averiguar a qualidade das heurísticas implementadas foram realizados testes automatizados de computador contra computador e implementada uma heurística de controlo, cujo valor de utilidade que devolve é aleatório. 
+
+As estatísticas apresentadas nesta secção referem-se ao jogador destacado a negrito. Por exemplo, o número de vitórias refere-se a vitórias desse jogador. As vitórias, derrotas, empates e número médio de turnos são representados respetivamente pelas cores azul, vermelha, verde e preta. As três primeiras são apresentadas em permilagem. Todos valores originais foram arredondados para baixo pelo que o somatório das componentes pode n\~ao igualar 1000\perthousand. 
+
+O jogador artificial que jogar com as brancas inicia a partida (ao contrário do Pentago original). 
+
+As informações apresentadas abaixo do nome das heurísticas referem-se aos pesos/opç\~oes usadas. Nas heurísticas 1 e 1.2 são sempre usados (e ocultados nas tabelas) os pesos \verb|default| usados para os diferentes tipos de linhas. Isto porque consideramos que a sua inclusão nos testes não se justifica, dada a reduzida relevância para projeto. Muitas das combinações usadas foram descobertas ao testar, de forma automatizada, as heurísticas com valores pseudo-aleatórios (dentro de determinados intervalos).
+
+Para cada cada heurística os dados apresentados referem-se a:
+\begin{itemize}  
+	\item 1 - \verb|bias|
+	\item 1.2 Relaxada? (Y=sim, N=não); Usa Hack Diagonal? (Y=sim, N=não); possibilidades ; possibilidades para oponente; possibilidades fortes; possibilidades fortes para oponente
+	\item A - monica ; meio ; direito ; tripla
+	\item A hacked - Pesos da 1.2 ; Pesos da A
+	\item A star - Pesos da A ;  Analisa Rotaç\~oes? (Y=sim,N=não)
+\end{itemize} 
+
+A primeira ocorrência de uma heurística numa tabela apresenta sempre os pesos \verb|default| da mesma.
+
+Além de testes automáticos foram realizadas também alguns jogos de humano contra as heurísticas implementadas. Para uma profundidade de 4 a heurística A e variantes normalmente conseguem realizar um jogo interessante contra um humano. Ao aumentar a profundidade o jogador humano tem que esperar algum tempo pela resposta, no entanto torna-se muito mais difícil vencer estas heurísticas. 
+
+\subsubsection{Testes de Heurísticas versus Controlo}
+
+Cada teste consiste em 400 partidas com tabuleiro inicial vazio e 400 com tabuleiros aleatórios. Dos 400 tabuleiros aleatórios uma metade são com um número de peças ímpares (jogador com pretas a iniciar a primeira jogada) e a outra metade com um número de peças par (jogador com brancas a iniciar a primeira jogada). 
+
+Repare-se que o valores de referencia para os testes em que a heurística testada joga com as peças pretas devem ser os da heurística de controlo que joga com as peças pretas. Ou seja, para comparar o número de vitórias das heurísticas nestes testes com as de controlo é necessário olhar para as derrotas apresentadas na primeira linha de teste (de controlo contra controlo).
+
+\input{tables/WDL_controlonly.tex}
+\input{tables/WDL_VScontrol.tex}
+
+\newpage
+\subsubsection{Testes de Heurísticas versus Heurísticas}
+
+Cada teste consiste em 200 partidas com tabuleiro inicial vazio e 200 com tabuleiros aleatórios. Dos 200 tabuleiros aleatórios uma metade são com um número de peças ímpares (jogador com pretas a iniciar a primeira jogada) e a outra metade com um número de peças par (jogador com brancas a iniciar a primeira jogada).
+
+\input{tables/WDL_IAs.tex}
+\input{tables/WDL_others.tex}
+
+\subsection{Eficiência dos Algoritmos}
+
+Para averiguar a eficiência de cada um dos algoritmos, agruparam-se os resultados dos testes em dois tipos. Primeiro o tempo que cada algoritmo demora a efetuar uma jogada em função do nível de profundidade. Depois o tempo que cada algoritmo demora a efetuar uma jogada em função do número de peças no tabuleiro. 
+
+Cada teste individual realizado varia no algoritmo usado, profundidade usada e número de peças no tabuleiro. Para um só teste são iterados 100 tabuleiros aleatórios, os mesmos tabuleiros são usados para cada algoritmo para profundidade e número de peças iguais.
+
+Os testes foram automatizados de modo a percorrerem todas as combinações de algoritmo, profundidade e número de peças delimitados. É apresentada nesta secç\~ao apenas uma versão integral dos resultados obtidos com a junção dos dados mais relevantes.
+
+\subsubsection{Variação do nível de profundidade}
+
+Estes testes foram efetuados com número de peças variável. No entanto, por questões de espaço, apenas apresentamos os resultados para a jogada inicial, isto é, quando o número de peças é 0. Dada a complexidade temporal dos algoritmos, apenas apresentamos profundidades até 6 (3 jogadas).
+
+Relativamente à profundidade 8 e outras acima, n\~ao nos foi possível apresentar resultados devido ao tempo que os testes demoraram a completar. Uma semana, usando os testes automatizados para 100 tabuleiros, não foi suficiente para obter dados relativos aos algoritmos para uma profundidade de 8 (4 jogadas). Alterando o número de tabuleiros talvez fosse possível obter resultados a tempo, tal n\~ao foi realizado porque para o uso de simetrias, remoção de de duplicados e para a ordenação aleatória do alfa-beta a utilização de um número reduzido de testes poderia levar a resultados com menor fiabilidade.
+
+\begin{table}[H]
+\centering
+\includegraphics[height=11cm]{performance/tempP0depthComparison.jpg}
+\end{table}
+
+O gráfico tem escala logarítmica no eixo dos tempos, daí as retas aproximadas. Isto significa, como já era de esperar, que todos os algoritmos apresentam complexidade exponencial. Também de esperar é a ordenação destes gráficos, sendo a melhor performance do alfa-beta com verificação de simetrias e remoção de duplicados e a pior do minimax sem qualquer melhoria.
+
+\subsubsection{Variação do número de peças}
+
+A variação do número de peças é útil para perceber que se pode obter resultados imediatos com níveis de profundidade diferentes ao longo do jogo. Enquanto que inicialmente o nível de profundidade 4 é o melhor que conseguimos, ao fim de 8 peças, já se consegue praticamente o mesmo tempo com nível de profundidade 6. Além disso, estes testes também ajudam a perceber quando é útil verificar as simetrias e remover duplicados.
+
+\begin{table}[H]
+\centering
+\includegraphics[height=12cm]{performance/tempPerfComparisonDepth2.jpg}
+\end{table}
+
+De reparar que a convergência total neste primeiro gráfico se deve ao facto de profundidade 2 corresponder apenas a uma jogada, não existindo por isso cortes alfa-beta.
+
+\begin{table}[H]
+\centering
+\includegraphics[height=10cm]{performance/tempPerfComparisonDepth4.jpg}
+\end{table}
+
+\begin{table}[H]
+\centering
+\includegraphics[height=9.5cm]{performance/tempPerfComparisonDepth6.jpg}
+\end{table}

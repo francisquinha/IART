@@ -1,0 +1,16 @@
+Because we are using an Interface makes sense
+to force the usage of a method that selects the min or max iteration.
+this way the implementation is more clear (and less 'hacked').
+(there is also a 2nd reason for this, if a multithread version
+was implemented, some 'hacked' solutions would not work)
+
+Using the Interface we can change the generic minimax behaviour (will still be generic!)
+to iterate in the following way:
+
+MINIMAX DEPTH % 4
+0 AI places  (max)
+1 AI rotates (max iteration, does not swap in prev)
+2 player places (min)
+3 player rotates (min iteration, does not swap in prev)
+
+there are no skip iterations using this Interface min/ma selector

@@ -1,0 +1,91 @@
+%\documentclass[11pt]{article}
+\documentclass{article}
+ 
+%encoding
+%--------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%--------------------------------------
+ 
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[portuguese]{babel}
+%\usepackage[english]{babel}
+%--------------------------------------
+ 
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{mate-mática recu-perar}
+
+%--------------------------------------
+%\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\usepackage[table]{xcolor}% http://ctan.org/pkg/xcolor
+
+\usepackage{fullpage}
+%\usepackage[color]{vdmlisting}
+\usepackage[hidelinks]{hyperref} 
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{listings}
+%\usepackage{natbib}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{rotating}
+\usepackage{placeins}
+\usepackage{csquotes}
+\usepackage{framed}
+
+\usepackage{textcomp}
+\usepackage{amsmath}
+\DeclareRobustCommand{\perthousand}{%
+  \ifmmode
+    \text{\textperthousand}%
+  \else
+    \textperthousand
+  \fi}
+
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+
+\usepackage{caption}
+\captionsetup[table]{name=Tabela}
+
+\usepackage{listings}
+\lstset{language=C++, 
+	numbers=none,
+	firstnumber=1,
+	numberfirstline=false,
+    basicstyle=\linespread{0.8}\ttfamily,
+    keywordstyle=\color{blue}\ttfamily,
+	showstringspaces=false,
+    stringstyle=\color{red}\ttfamily,
+    commentstyle=\color{green}\ttfamily,
+	identifierstyle=\color{darkgray}\ttfamily,
+    morecomment=[l][\color{magenta}]{\#},
+	tabsize=4,
+    breaklines=true
+}
+
+\usepackage[
+backend=biber,
+sorting=ynt
+]{biblatex}
+\addbibresource{refs.bib}
+
+\usepackage[margin=0.8in]{geometry}
+
+\usepackage[toc,page]{appendix}
+
+\newlist{legal}{enumerate}{10}
+\setlist[legal]{label*=\arabic*.}
+
+\newcommand\Tstrut{\rule{0pt}{2.6ex}}       % "top" strut
+\newcommand\Bstrut{\rule[-0.9ex]{0pt}{0pt}} % "bottom" strut
+\newcommand{\TBstrut}{\Tstrut\Bstrut} % top&bottom struts
+\newcommand{\spheading}[2][10em]{% \spheading[<width>]{<stuff>}
+  \rotatebox{90}{\parbox{#1}{\raggedright #2}}}

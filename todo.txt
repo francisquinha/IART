@@ -1,0 +1,7 @@
+funções heurísticas 3 - uma para cada um
+gerar casos de teste aleatórios para avaliarmos as funções heurísticas
+método que, dada uma AI e um caso de teste, use a AI para jogar partindo do caso de teste
+minimax generalizado
+alfa-beta generalizado
+método para medir tempos das AI em função da profundidade do minimax (ou do alfa-beta ou de um minimax com outro tipo de poda)
+

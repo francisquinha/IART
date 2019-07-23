@@ -1,0 +1,83 @@
+-----------------------------------------------
+partial class IMPORTANTE
+
+em c# podemos desenvolver a mesma classe em ficheiros diferentes
+assim podemos criar ficheiros para cada funcionalidade especifica
+que implementarmos para uma classe
+
+assim evitam-se colisoes no guit
+
+CONVENCAO
+usar <nome da classe>.cs     			 na principal
+usar <nome da classe>.<dados/funcionalidade>.cs  nas outras
+
+-----------------------------------------------
+por defeito os metodos de classe sao privados, devido ao principio de encapsulamento
+(em java sao publicos por default)
+e preciso meter a keyword public ou protected
+-----------------------------------------------
+func (int abc, bool foo= false)
+podemos atribuir valores defaults (so nos argumentos finais, sem buracos)
+chamando func(4) a funcao e chamada com foo = false
+chamando func(3,true) ja altera o valor de foo
+-----------------------------------------------
+nullable types:
+int? , bool?, float?, etc...
+
+pode ter valor ou ser null. 
+int nunca pode ser null.
+int? pode ser null ou apresentar um valor. pode ser particuarmente util p/ padroes lazy
+
+-----------------------------------------------
+ref and out (keywords)
+
+podemos passar stuff por referencia ao contrario de java que e preciso criar uma classe
+
+https://msdn.microsoft.com/en-us/library/t3c3bfhx.aspx
+https://msdn.microsoft.com/en-us/library/14akc2c7.aspx
+
+http://stackoverflow.com/questions/388464/whats-the-difference-between-the-ref-and-out-keywords
+-----------------------------------------------
+arrays, listas, etc...
+
+arrays sao passados como referencia (igual ao java)
+
+(useful includes)
+
+using System.Collections.Generic;
+
+using System.Linq; -> use high level array/list operations/queries ...  .Any(),Select(),Where(), etc...
+
+http://www.25hoursaday.com/weblog/2008/06/16/FunctionalProgrammingInC30HowMapReduceFilterCanRockYourWorld.aspx
+
+https://msdn.microsoft.com/en-us/library/system.collections(v=vs.110).aspx
+
+please don't use these often -> https://msdn.microsoft.com/en-us/library/bb397906.aspx
+
+----------------------------------------------
+pouco provavel precisarem mas demasiado util p/ deixar de fora...
+lambda expressions -> think high level and code much less
+
+https://msdn.microsoft.com/en-us/library/bb397687.aspx
+
+----------------------------------------------
+coisas uteis mas que MUITO MUITO dificilmente precisarao de usar
+(vejam so se tiverem curiosidade)
+
+delegates (recebem metodos pra dps serem executados, a coisa mais parecida que me vem a cabeca sao apontadores pra metodos em c)
+https://msdn.microsoft.com/en-us/library/aa288459(v=vs.71).aspx
+
+params (keyword)
+https://msdn.microsoft.com/en-us/library/w5zay9db.aspx
+
+enums stuff
+https://msdn.microsoft.com/en-us/library/sbbt4032.aspx
+http://stackoverflow.com/questions/8447/what-does-the-flags-enum-attribute-mean-in-c
+http://stackoverflow.com/questions/3261451/using-a-bitmask-in-c-sharp
+
+yield (keyword)
+https://msdn.microsoft.com/en-us/library/9k7k7cf0.aspx
+
+events 
+https://msdn.microsoft.com/en-us/library/aa645739(v=vs.71).aspx
+----------------------------------------------
